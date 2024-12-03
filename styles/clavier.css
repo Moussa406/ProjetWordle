@@ -2,11 +2,11 @@
     /* background: magenta; */
     display: flex;
     flex-wrap: wrap;
-    width: 370px;
+    width: 440px;
 
     button {
         margin: 2px;
-        width: 30px;
+        width: 40px;
         height: 40px;
         border-radius: 5px;
         border: none;
@@ -21,7 +21,7 @@
     }
 
     .toucheAction {
-        width: 64px;
+        width: 84px;
     }
 
 

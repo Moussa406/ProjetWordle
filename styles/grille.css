@@ -1,0 +1,24 @@
+#grille{
+    display: flex;
+    flex-direction: column;
+    .ligne{
+        display: flex;
+        .case{
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            margin: 2px;
+            border: solid 2px grey;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .active{
+            border: solid 2px red;
+
+        }
+    }
+    
+}
