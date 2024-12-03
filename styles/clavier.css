@@ -1,0 +1,28 @@
+#clavier {
+    /* background: magenta; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 370px;
+
+    button {
+        margin: 2px;
+        width: 30px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        background-color: rgb(122, 121, 121);
+        text-transform: uppercase;
+    }
+
+    button:hover{
+        filter: brightness(0.8)
+    }
+
+    .toucheAction {
+        width: 64px;
+    }
+
+
+}
