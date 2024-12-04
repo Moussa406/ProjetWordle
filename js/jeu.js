@@ -10,7 +10,7 @@ const timerElement = document.getElementById("timer");
 const essaisRestant = document.getElementById("essaisRestant")
 const boutonRejouer = document.getElementById("btRejouer")
 
-const departMinutes = 0.5;
+const departMinutes = 2.5;
 let chrono;
 let temps;
 
@@ -106,6 +106,7 @@ function initialisationTentative() {
 function startTimer() {
   chrono = setInterval(() => {
     if(temps === 0 ){
+      enJeu = false
       stopTimer();
     }
     let minutes = parseInt(temps / 60, 10);
