@@ -3,7 +3,16 @@ let colone = 0;
 let motMystere = "SALUT";
 let motSaisie = "";
 let point = 7;
+let pointTemps = 0;
 let enJeu = false;
+
+const timerElement = document.getElementById("timer");
+const essaisRestant = document.getElementById("essaisRestant")
+const boutonRejouer = document.getElementById("btRejouer")
+
+const departMinutes = 0.5;
+let chrono;
+let temps;
 
 initialisationJeu();
 
@@ -13,9 +22,9 @@ function initialisationJeu() {
 
   // Listener du clavier
   // zoneJeuContainer
-  const grille = document.querySelector(".zoneJeuContainer")
+  const grille = document.querySelector(".zoneJeuContainer");
   // const grille = document.getElementById("grille");
-  grille.addEventListener("keydown", (event) => {
+  document.addEventListener("keydown", (event) => {
     switch (event.key) {
       case "Enter":
         testeLaReponse();
@@ -49,13 +58,22 @@ function initialisationJeu() {
     testeLaReponse();
   });
 
+  // Listener bouton rejouer
+  boutonRejouer.addEventListener("click", function(){
+    boutonRejouer.classList.toggle("visible")
+    initialisationPartie()
+  });
+
   initialisationPartie();
 }
 
 function initialisationPartie() {
   ligne = 0;
   point = 7;
-  motMystere = "SALUT";
+  const indexAleatoire = Math.floor(Math.random() * words.length);
+  motMystere = words[indexAleatoire];
+  console.log(motMystere)
+  temps = departMinutes * 60;
   enJeu = true;
 
   const casesGrille = document.querySelectorAll(".case");
@@ -69,17 +87,43 @@ function initialisationPartie() {
   }
 
   initialisationTentative();
+  startTimer()
 }
 
 function initialisationTentative() {
   colone = 0;
   motSaisie = "";
   point--;
+  essaisRestant.textContent = point
   setCouleurFocus();
   if (ligne > 5) {
-    console.log("perdu")
+    console.log("perdu");
     enJeu = false;
+    stopTimer();
   }
+}
+
+function startTimer() {
+  chrono = setInterval(() => {
+    if(temps === 0 ){
+      stopTimer();
+    }
+    let minutes = parseInt(temps / 60, 10);
+    let secondes = parseInt(temps % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    secondes = secondes < 10 ? "0" + secondes : secondes;
+
+    timerElement.innerText = `${minutes}:${secondes}`;
+    pointTemps = temps;
+    temps = temps <= 1 ? 0 : temps - 1;
+    // console.log(temps)
+  }, 1000);
+}
+
+function stopTimer(){
+  clearInterval(chrono);
+  boutonRejouer.classList.toggle("visible")
 }
 
 function testeLaReponse() {
@@ -89,6 +133,7 @@ function testeLaReponse() {
       console.log("gagné");
       console.log(point);
       enJeu = false;
+      stopTimer()
     } else {
       ligne++;
       initialisationTentative();
@@ -97,7 +142,14 @@ function testeLaReponse() {
 }
 
 function motExiste(mot) {
-  return true;
+  if( words.includes(mot)){
+    return true
+  }else{
+    const ligneGrille = document.getElementById(`ligne${ligne}`)
+    ligneGrille.classList.toggle('saisieIncorect')
+    return false
+  }
+  
 }
 
 function ajouteLaLettreSaisie(char) {
@@ -117,7 +169,9 @@ function ajouteLaLettreSaisie(char) {
 }
 
 function effaceDerniereLettre() {
-  if (enJeu === true) {
+  if (enJeu === true && colone > 0) {
+    const ligneGrille = document.getElementById(`ligne${ligne}`)
+    ligneGrille.classList.remove('saisieIncorect')
     setCouleurFocus();
     colone--;
     setCouleurFocus();

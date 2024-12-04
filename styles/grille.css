@@ -32,6 +32,10 @@
             color: black;
         }
     }
+
+    .saisieIncorect .case{
+        color: red;
+    }
 }
 
 

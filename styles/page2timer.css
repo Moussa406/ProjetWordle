@@ -11,6 +11,7 @@ main{
 
   #grille {
     margin: auto;
+    margin-bottom: 15px;
   }
 
   #clavier{
@@ -43,9 +44,18 @@ main{
   }
 
   .boutton {
+    opacity: 0;
+    visibility: hidden;
     width: fit-content;
     margin: 0 auto;
+    transition: 0.5s;
   }
+
+  .boutton.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+
 }
 
 
