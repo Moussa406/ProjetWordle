@@ -24,5 +24,17 @@
         width: 84px;
     }
 
+    .lettreMauvaise{
+        background-color: red;
+    }
+
+    .lettreMalPlace{
+        background-color: orange;
+    }
+
+    .lettreOK{
+        background-color: green;
+    }
+
 
 }

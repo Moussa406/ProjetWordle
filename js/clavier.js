@@ -4,18 +4,29 @@ function creationDuClavierVirtuel(){
     
     tableauDeCaracteres.forEach((caractere, index) => {
         if (index === 20){
-            ajouteBouton("↩", "toucheAction")
+            ajouteBouton("↩", "enter")
         }
         ajouteBouton(caractere, "toucheLettre")
     });
 
-    ajouteBouton("⌫", "toucheAction")
+    ajouteBouton("⌫", "retour")
 }
 
 function ajouteBouton(value, maClasse){
+    
+
     const container = document.getElementById('clavier')
     const bouton = document.createElement("button");
-    bouton.textContent = value;
-    bouton.classList.add(maClasse)
+    bouton.textContent = value.toUpperCase();
+
+    if (maClasse === "toucheLettre"){
+        bouton.id = `bt-${value.toUpperCase()}`
+        bouton.classList.add(maClasse)
+    }else{
+        bouton.id = `bt-${maClasse}`
+        bouton.classList.add(`toucheAction`)
+    }
+    
+    
     container.appendChild(bouton);
 }
