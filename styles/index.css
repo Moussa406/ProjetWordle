@@ -12,3 +12,50 @@
     --lettreMalPlacer: #4cc9f0;
     --focusLettre: #FFFFFF;
 }
+
+
+body {
+    background-image: url("../image/imageindex.png");
+    background-size: cover;
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 100px;
+    color: white;
+    font-family: "Wallpoet", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.boutton {
+background-color: var(--couleur-bouton);
+color: var(--focusLettre);
+font-size:24px; 
+padding:10px 20px; 
+cursor: pointer; 
+border-radius: 50px;
+margin-left: 8px;
+border: none;
+}
+
+.deuxbouttons {
+    display: flex;
+    position: relative;
+    margin: auto;
+    bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    height: 100vh;
+}
+
+.titre {
+    
+}
