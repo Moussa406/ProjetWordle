@@ -44,9 +44,13 @@ border: none;
 
 .deuxbouttons {
     display: flex;
-    position: relative;
-    margin: auto;
-    bottom: 20px;
+    justify-content: center; 
+    align-items: center; 
+    position: fixed; 
+    bottom: 100px; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
 }
 
 main {
@@ -57,5 +61,6 @@ main {
 }
 
 .titre {
-    
+    text-align: center;
+    margin-top: 10%;
 }
