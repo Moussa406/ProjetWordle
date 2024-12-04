@@ -1,6 +1,7 @@
 #grille{
     display: flex;
     flex-direction: column;
+
     .ligne{
         display: flex;
         .case{
@@ -17,8 +18,18 @@
 
         .active{
             border: solid 2px red;
+        }
 
+        .lettreKO{
+            background-color: red;
+        }
+        .lettreOK{
+            background-color: green;
+        }
+        .lettreExiste{
+            background-color: orange;
         }
     }
-    
 }
+
+
