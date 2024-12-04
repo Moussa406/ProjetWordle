@@ -1,5 +1,5 @@
 
-.deuxbouttons {
+ .deuxbouttons {
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -19,3 +19,37 @@
     height: 100vh;
 }
 
+.titre {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.reglejeu {
+    text-shadow: #000123;
+    color: var(--focusLettre);
+    border : 2px solid var(--couleur-bouton);
+    width: 500px;
+    height: 300px;
+    padding: 50px;
+    align-items: center;
+    display: flex;
+    font-size: 28px;
+    position: absolute;
+    right: 15px;   
+    top: calc(50% - 150px);
+    background: rgba(255, 255, 255, 0.026);    
+    box-shadow: 10px 10px 2px white;
+    border-radius: 10px;
+}
+
+.cross {
+    position: absolute; /* Positionnement par rapport au parent (.reglejeu) */
+    top: 10px; /* Distance du haut */
+    right: 10px; /* Distance de la droite */
+    cursor: pointer; /* Indique que l'élément est cliquable */
+}
+
+.cross img {
+    width: 35px; /* Taille de l'image (modifiable) */
+    height: 35px; /* Taille de l'image (modifiable) */
+}

@@ -19,6 +19,7 @@ body {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+    background-color: var(--couleur-background);
 }
 
 h1 {
