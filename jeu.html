@@ -4,15 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Wordle</title>
+    <link rel="stylesheet" href="styles/page2timer.css">
     <link rel="stylesheet" href="styles/clavier.css">
     <link rel="stylesheet" href="styles/grille.css">
 </head>
 <body>
-    <div id="grille" tabindex="0">
-    </div>
 
-    <div id="clavier">
-    </div>
+    <main>
+        <div class="zoneJeu">
+            <div id="grille" tabindex="0">
+            </div>
+        
+            <div id="clavier">
+            </div>
+        </div>
+        <div class="affichage">
+            <div id="timer"></div>
+
+            <div class="affichageEssais">
+                <h3>Vous avez <span>6</span> essais</h3>
+                <h3>Il vous reste <span>6</span> essais</h3>
+            </div>
+        </div> 
+        
+    <script src="script.js"></script>
+       
+    </main>
+    
     <script src="js/clavier.js"></script>
     <script src="js/grille.js"></script>
     <script src="js/jeu.js"></script>

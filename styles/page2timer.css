@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Wallpoet&display=swap');
+
+
+main{
+  display: flex;
+  padding: 10px;
+}
+
+.zoneJeu {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  background-color: magenta;
+
+  #grille{
+    margin: auto;
+  }
+
+  #clavier{
+    margin: auto;
+  }
+}
+
+.affichage{
+  margin: auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.affichageEssais {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  line-height: 0px;
+}
+
+span {
+  color: #8c52ff;
+}
+
+#timer {
+  color: #8c52ff;
+  background-color: none;
+  font-weight: bold;
+  font-size: 4em;
+  text-align: center;
+  /* background-color: blue;
+  font-weight: bold;
+  font-size: 4em;
+  color: #8c52ff;
+  margin-left: 700px;
+  margin-bottom: 300px; */
+}
+
+body {
+    background-color: #000123;
+  }
+
+  
+
+
+  /* html {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  } */
+  
+  /* #timer {
+    font-weight: bold;
+    font-size: 4em;
+    color: #8c52ff;
+    margin-left: 700px;
+    margin-bottom: 300px;
+    
+  } */
+
+ 
+  
+  
+  /* s  */
