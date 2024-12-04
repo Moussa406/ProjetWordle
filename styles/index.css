@@ -1,5 +1,37 @@
 
- .deuxbouttons {
+
+body {
+    background-image: url("../image/imageindex.png");
+    background-size: cover;
+    font-family: "Oxanium", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 100px;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Wallpoet", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+.boutton {
+text-transform: uppercase;
+background-color: var(--couleur-bouton);
+color: var(--focusLettre);
+font-size:24px; 
+padding:10px 20px; 
+cursor: pointer; 
+border-radius: 50px;
+margin-left: 8px;
+border: none;
+}
+
+.deuxBouttons {
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -21,10 +53,10 @@
 
 .titre {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
-.reglejeu {
+.regleJeu {
     text-shadow: #000123;
     color: var(--focusLettre);
     border : 2px solid var(--couleur-bouton);
@@ -40,16 +72,17 @@
     background: rgba(255, 255, 255, 0.026);    
     box-shadow: 10px 10px 2px white;
     border-radius: 10px;
+    display: none;
 }
 
 .cross {
     position: absolute; /* Positionnement par rapport au parent (.reglejeu) */
-    top: 10px; /* Distance du haut */
-    right: 10px; /* Distance de la droite */
-    cursor: pointer; /* Indique que l'élément est cliquable */
+    top: 10px; 
+    right: 10px;
+    cursor: pointer;
 }
 
 .cross img {
-    width: 35px; /* Taille de l'image (modifiable) */
-    height: 35px; /* Taille de l'image (modifiable) */
+    width: 35px;
+    height: 35px;
 }
