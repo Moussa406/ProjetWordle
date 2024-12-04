@@ -12,7 +12,9 @@ function initialisationJeu() {
   creationGrille();
 
   // Listener du clavier
-  const grille = document.getElementById("grille");
+  // zoneJeuContainer
+  const grille = document.querySelector(".zoneJeuContainer")
+  // const grille = document.getElementById("grille");
   grille.addEventListener("keydown", (event) => {
     switch (event.key) {
       case "Enter":

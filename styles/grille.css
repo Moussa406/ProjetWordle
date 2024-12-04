@@ -5,29 +5,31 @@
     .ligne{
         display: flex;
         .case{
+            font-size: 60px;
             width: 60px;
             height: 60px;
             border-radius: 5px;
             margin: 2px;
-            border: solid 2px grey;
-            background-color: black;
+            border: solid 2px rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.099);
             color: white;
             text-align: center;
-            line-height: 60px;
+            line-height: 64px;
         }
 
         .active{
-            border: solid 2px red;
+            border: solid 2px var(--lettreKO);
         }
 
         .lettreKO{
-            background-color: red;
+            background-color: var(--lettreKO);
         }
         .lettreOK{
-            background-color: green;
+            background-color: var(--lettreOK);
         }
         .lettreExiste{
-            background-color: orange;
+            background-color: var(--lettreMalPlacer);
+            color: black;
         }
     }
 }

@@ -25,15 +25,15 @@
     }
 
     .lettreMauvaise{
-        background-color: red;
+        background-color: var(--lettreKO);
     }
 
     .lettreMalPlace{
-        background-color: orange;
+        background-color: var(--lettreMalPlacer);
     }
 
     .lettreOK{
-        background-color: green;
+        background-color: var(--lettreOK);
     }
 
 
