@@ -268,3 +268,36 @@ function couleurCase(maColone, point, lettre) {
   }
 }
 
+
+
+// //Mode 2 joueurs
+// function game() {
+//   this.compteurDeSeconde = 0;
+
+// // déclaration des personnages
+//   this.joueur1;
+//   this.joueur2;
+//   this.persoActif;
+
+// // incrémente le compteur_de_tour et change de this.perso_actuel si > 3
+// this.verifieCompteur = function() {
+//   this.compteurDeSeconde++;
+//   this.joueur1.updateInfo();
+//   this.joueur2.updateInfo();
+//   if (this.compteurDeSeconde >= 30) {
+//     this.persoActif == this.joueur1 ? this.persoActif = this.joueur2 : this.persoActif = this.joueur1;
+//     this.compteurDeSeconde = 0;
+//     alert("Changement de joueur, au tour de "+ this.persoActif.nom + " de jouer.");
+//   }
+// };
+
+  //   // choix aléatoire du joueur qui commence la partie
+  //   if (nb_aleat(2) > 1) {
+  //     this.persoActif = this.joueur1;
+  //     alert(this.joueur1.nom + " commence la partie.");
+  //   } else {
+  //     this.persoActif = this.joueur2;
+  //     alert(this.joueur2.nom + " commence la partie.");
+  //   }
+  //   this.toucheEnfonce();
+  // };  
