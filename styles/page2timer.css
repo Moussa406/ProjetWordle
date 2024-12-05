@@ -34,7 +34,6 @@ main{
   text-align: center;
   font-size: 24px;
   
-
   p {
     margin-top: 0;
     font-size: 24px;
@@ -78,9 +77,10 @@ main{
     color: greenyellow;
     margin-top:100px;
   }
+
  .affichageDebutPhrase {
   color: white;
-   }
+  }
 
 }
 

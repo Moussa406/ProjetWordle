@@ -304,7 +304,7 @@ function recupereHistorique() {
 function afficheScore(nbTentative, tempsPartie, victoire) {
   const points = victoire ? nbTentative * 10 + tempsPartie : 0;
   const nbTentativeRestante = victoire ? 7 - nbTentative : "-";
-  const temps = victoire ? tempsPartie : "-";
+  const temps = victoire ? (departMinutes * 60) - tempsPartie : "-";
 
   historiquePartie.push({
     tentative: nbTentativeRestante,

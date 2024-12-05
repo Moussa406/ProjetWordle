@@ -8,8 +8,8 @@
     --couleur-background: #000123;
     --couleur-joueur2: #cb6ce6;
     --lettreOK: #219847;
-    --lettreKO: #f72585;
-    --lettreMalPlacer: #4cc9f0;
+    --lettreKO: #2c2629;
+    --lettreMalPlacer: orange;
     --focusLettre: #FFFFFF;
 }
 

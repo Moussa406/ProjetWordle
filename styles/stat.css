@@ -1,0 +1,54 @@
+main {
+    color: white;
+}
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.contain {
+    display: flex;
+}
+
+.div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+table {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.213);
+    border-radius: 5px;
+}
+
+th {
+    width: 90px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+td {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+tr:last-child td {
+    border-bottom: none
+}
+
+.victoire{
+    color:var(--lettreOK)
+}
+.perdu{
+    color: red;
+}
+
+span{
+    font-size: 30px;
+}
+
+.texteStat{
+    color: var(--couleur-bouton);
+    margin-right: 5px;
+}
