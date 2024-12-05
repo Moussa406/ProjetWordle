@@ -67,6 +67,8 @@ function initialisationJeu() {
   // Listener bouton rejouer
   boutonRejouer.addEventListener("click", function () {
     boutonRejouer.classList.toggle("visible");
+    document.getElementById('resultatPartieVictoire').classList.remove('visible')
+    document.getElementById('resultatPartiePerdu').classList.remove('visible')
     initialisationPartie();
   });
 
@@ -75,7 +77,7 @@ function initialisationJeu() {
 
 // Initialisation d'une nouvelle partie
 function initialisationPartie() {
-  // Initialisation du chrono, des point
+  // Initialisation du chrono, des points
   temps = departMinutes * 60 - 1; // (-1 pour décaller de 1s le chrono)
   pointTentative = 7;
   pointPartie = 0;
@@ -296,12 +298,12 @@ function afficheScore(nbTentative, tempsPartie, victoire){
   const nbTentativeRestante = victoire ? 7 - nbTentative : "-"
   const temps = victoire ? tempsPartie : "-";
 
-
-
+  
+  
   historiquePartie.push({tentative: nbTentativeRestante, temps: temps, victoire:victoire, point: points});
 
   localStorage.setItem("wordle", JSON.stringify(historiquePartie));
-
+  
   if(victoire){
     const container = document.getElementById('resultatPartieVictoire')
     container.classList.add('visible')

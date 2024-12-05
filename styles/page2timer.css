@@ -46,8 +46,8 @@ main{
   }
 
   .boutton {
-    opacity: 0.5;
-    /* visibility: hidden; */
+    opacity: 0;
+    visibility: hidden;
     width: fit-content;
     margin: 0 auto;
     transition: .5s;
