@@ -46,3 +46,36 @@ h3 {
     margin : auto;  
     padding: 20px;
 }
+
+.afficheResultat {
+    text-shadow: #000123;
+    color: var(--focusLettre);
+    border : 2px solid var(--couleur-bouton);
+    width: 200px;
+    height: 2.5px;
+    padding: 50px;
+    align-items: center;
+    display: flex;
+    font-size: 28px;
+    margin-right: auto;
+    margin-left: auto;
+    /* right: 15px;    */
+    /* top: calc(50% - 150px); */
+    background: rgba(255, 255, 255, 0.144);    
+   /* box-shadow: 10px 10px 2px rgba(255, 255, 255, 0.3);*/
+    border-radius: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 2s;
+    position: relative;
+    
+    display: none;
+    
+    
+  
+    p {
+      font-size: 25px;
+      margin: 0;
+  
+    }
+  }

@@ -26,14 +26,31 @@
             </div>
         </div>
         <div class="affichage">
-            <h3>Joueur 1</h3>
-            <h3>Joueur 2</h3>
+            <h3>Joueur 1</h3> <h3>Joueur 2</h3>
             <div id="timer" class="timer">02:30</div>
 
             <div class="affichageEssais">
                 <p>Vous avez <span>6</span> essais</p>
                 <p>Il vous reste <span id="essaisRestant">6</span> essais</p>           
                  <button id="btRejouer" class="boutton">Nouvelle partie <i class="fas fa-arrow-alt-circle-right"></i></button>
+
+                 <div class="afficheResultat gagne" id="resultatPartieVictoire">
+                    <div class="cross" id="closeButtonVictoire">
+                        <img src="image/croix.png" alt="croix">
+                    </div>
+                    <p>Vous avez gagné</p> 
+                </div>       
+
+                <div class="afficheResultat perdu" id="resultatPartiePerdu">
+                    <div class="cross" id="closeButton">
+                        <img src="image/croix.png" alt="croix">
+                    </div>
+                    <p>Vous avez perdu</p> 
+                </div> 
+                <div class="motMystere">
+                    <span class="affichageDebutPhrase">Mot à trouver :</span>
+                    <span class="affichageMotMystere" id="solutionMot">SALUT</span>
+                </div> 
             </div>
         </div> 
         
