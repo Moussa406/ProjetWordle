@@ -4,8 +4,13 @@ let motMystere = "SALUT";
 let motSaisie = "";
 let pointTentative = 7;
 let pointTemps = 0;
-let pointPartie = 0;
 let enJeu = false;
+
+// récupération de l'historique des partie
+let historiquePartie = [];
+let historiqueVictoireDeSuite = 0
+let victoireDeSuite = 0;
+recupereHistorique();
 
 const timerElement = document.getElementById("timer");
 const essaisRestant = document.getElementById("essaisRestant");
@@ -119,6 +124,8 @@ function initialisationTentative() {
   // Si arrivé à la dernière ligne on est en fin de partie
   if (ligne > 5) {
     console.log("perdu");
+    victoireDeSuite = 0;
+    afficheScore(pointTentative, pointTemps, false)
     enJeu = false;
     stopTimer();
   }
@@ -129,6 +136,8 @@ function startTimer() {
   chrono = setInterval(() => {
     // Quand le temps est arrivé à 0 on stop le chrono et fin de partie
     if (temps === 0) {
+      victoireDeSuite = 0;
+      afficheScore(pointTentative, pointTemps, false)
       enJeu = false;
       stopTimer();
     }
@@ -171,10 +180,13 @@ function testeLaReponse() {
       checkCorespondance(motSaisie);
       // Si le mot est le bon on calcul les point, les affiches et fin de partie
       if (motMystere === motSaisie) {
-        console.log("gagné");
-        console.log(pointTentative);
-        console.log(temps);
+        // console.log("gagné");
+        // console.log(pointTentative);
+        // console.log(temps);
+
         enJeu = false;
+        victoireDeSuite++;
+        afficheScore(pointTentative, pointTemps, true)
         stopTimer();
       } else {
         // On passe à la tentative suivante
