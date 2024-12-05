@@ -280,3 +280,34 @@ function couleurCase(maColone, point, lettre) {
   }
 }
 
+function recupereHistorique(){
+  if (localStorage.getItem("wordle")) {
+    historiquePartie = JSON.parse(localStorage.getItem("wordle"));
+  }
+
+  if(localStorage.getItem("wordle_victoire")){
+    historiqueVictoireDeSuite = JSON.parse(localStorage.getItem("wordle_victoire"));
+  }
+}
+
+
+function afficheScore(nbTentative, tempsPartie, victoire){
+  const points = victoire ? (nbTentative * 10) + tempsPartie : 0;
+  const nbTentativeRestante = victoire ? 7 - nbTentative : "-"
+  const temps = victoire ? tempsPartie : "-";
+
+
+
+  historiquePartie.push({tentative: nbTentativeRestante, temps: temps, victoire:victoire, point: points});
+
+  localStorage.setItem("wordle", JSON.stringify(historiquePartie));
+
+  if(victoire){
+    const container = document.getElementById('resultatPartieVictoire')
+    container.classList.add('visible')
+  }else{
+    const container = document.getElementById('resultatPartiePerdu')
+    container.classList.add('visible')
+  }
+
+}
