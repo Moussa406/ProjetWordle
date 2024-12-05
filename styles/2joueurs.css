@@ -1,9 +1,48 @@
 h1 {
-    font-size: 100px;
+    font-size: 50px;
     text-transform: uppercase;
     color: white;
     font-family: "Wallpoet", serif;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
     
+}
+
+a {
+    color : white;
+    text-decoration: none;
+}
+
+p {
+    text-align: center;
+    color : white
+}
+
+.button {
+    margin: auto;
+}
+
+/* Lien dans le bouton */
+.boutton a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: inherit; /* Hérite de la couleur définie pour le bouton */
+    display: inline-block; /* Empêche le lien de remplir tout l'espace du bouton */
+    width: 100%; /* Facultatif, pour un alignement optimal */
+    text-align: center; /* Centre le texte si nécessaire */
+}
+
+/* Alignement et espace du bouton */
+.boutton {
+    display: inline-block; /* Assure que le bouton est limité à son contenu */
+    text-align: center; /* Centre le texte du bouton */
+}
+
+h3 {
+    color : white;
+    text-align: center;
+    border: 5px var(--couleur-joueur2) double;
+    border-radius: 20px;
+    margin : auto;  
+    padding: 20px;
 }
