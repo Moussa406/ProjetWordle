@@ -300,6 +300,6 @@ function afficheScore(nbTentative, tempsPartie, victoire){
 
   localStorage.setItem("wordle", JSON.stringify(historiquePartie));
   
-  if()
+
 
 }
