@@ -58,14 +58,25 @@ main{
     opacity: 1;
     visibility: visible;
   }
+
   .motMystere {
     margin-top: 30px;
     font-size: 24px;
+    opacity: 0;
+    transition: 0.5s ease-out@;
   }
+
+  .motMystere.visible {
+    opacity: 1;
+  }
+
+  .motMystere.triche{
+    opacity: 0.1;
+  }
+
   .affichageMotMystere {
     color: greenyellow;
     margin-top:100px;
-
   }
  .affichageDebutPhrase {
   color: white;
@@ -95,24 +106,17 @@ main{
   font-size: 28px;
   margin-right: auto;
   margin-left: auto;
-  /* right: 15px;    */
-  /* top: calc(50% - 150px); */
   background: rgba(255, 255, 255, 0.144);    
- /* box-shadow: 10px 10px 2px rgba(255, 255, 255, 0.3);*/
   border-radius: 40px;
   opacity: 0;
   visibility: hidden;
-  transition: 2s;
+  transition: 0.5s;
   position: relative;
-  
-  display: none;
-  
-  
 
-  p {
+  span {
     font-size: 25px;
+    color: white;
     margin: 0;
-
   }
 }
 
@@ -127,7 +131,7 @@ main{
 .afficheResultat.visible{
 opacity: 1;
 visibility: visible;
-display: flex;
+/* display: flex; */
 }
 
 

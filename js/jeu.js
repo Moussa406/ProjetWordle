@@ -8,7 +8,7 @@ let enJeu = false;
 
 // récupération de l'historique des partie
 let historiquePartie = [];
-let historiqueVictoireDeSuite = 0
+let historiqueVictoireDeSuite = 0;
 let victoireDeSuite = 0;
 recupereHistorique();
 
@@ -67,8 +67,9 @@ function initialisationJeu() {
   // Listener bouton rejouer
   boutonRejouer.addEventListener("click", function () {
     boutonRejouer.classList.toggle("visible");
-    document.getElementById('resultatPartieVictoire').classList.remove('visible')
-    document.getElementById('resultatPartiePerdu').classList.remove('visible')
+    document
+      .getElementById("resultatPartie")
+      .classList.remove("visible");
     initialisationPartie();
   });
 
@@ -102,7 +103,8 @@ function initialisationPartie() {
   //  Sort un mot aléatoire
   const indexAleatoire = Math.floor(Math.random() * words.length);
   motMystere = words[indexAleatoire];
-  console.log(motMystere);
+  document.getElementById("solutionMot").textContent = motMystere;
+  document.getElementById("motMystere").classList.remove("visible")
 
   initialisationTentative();
   startTimer();
@@ -125,9 +127,8 @@ function initialisationTentative() {
 
   // Si arrivé à la dernière ligne on est en fin de partie
   if (ligne > 5) {
-    console.log("perdu");
     victoireDeSuite = 0;
-    afficheScore(pointTentative, pointTemps, false)
+    afficheScore(pointTentative, pointTemps, false);
     enJeu = false;
     stopTimer();
   }
@@ -139,7 +140,7 @@ function startTimer() {
     // Quand le temps est arrivé à 0 on stop le chrono et fin de partie
     if (temps === 0) {
       victoireDeSuite = 0;
-      afficheScore(pointTentative, pointTemps, false)
+      afficheScore(pointTentative, pointTemps, false);
       enJeu = false;
       stopTimer();
     }
@@ -188,7 +189,7 @@ function testeLaReponse() {
 
         enJeu = false;
         victoireDeSuite++;
-        afficheScore(pointTentative, pointTemps, true)
+        afficheScore(pointTentative, pointTemps, true);
         stopTimer();
       } else {
         // On passe à la tentative suivante
@@ -214,7 +215,7 @@ function motExiste(mot) {
 function ajouteLaLettreSaisie(char) {
   // Liste les caractères autorisés
   const regex = /^[a-zA-Z]$/;
-
+  console.log(char)
   if (regex.test(char) && ligne < 6 && enJeu === true) {
     if (colone < 5) {
       const maCase = document.getElementById(`l${ligne}c${colone}`);
@@ -225,6 +226,12 @@ function ajouteLaLettreSaisie(char) {
       setCouleurFocus();
     }
   }
+
+  // mode triche debug à supprimer
+  if(char === '@'){
+    document.getElementById("motMystere").classList.toggle("triche")
+  }
+
 }
 
 function effaceDerniereLettre() {
@@ -282,34 +289,51 @@ function couleurCase(maColone, point, lettre) {
   }
 }
 
-function recupereHistorique(){
+function recupereHistorique() {
   if (localStorage.getItem("wordle")) {
     historiquePartie = JSON.parse(localStorage.getItem("wordle"));
   }
 
-  if(localStorage.getItem("wordle_victoire")){
-    historiqueVictoireDeSuite = JSON.parse(localStorage.getItem("wordle_victoire"));
+  if (localStorage.getItem("wordle_victoire")) {
+    historiqueVictoireDeSuite = JSON.parse(
+      localStorage.getItem("wordle_victoire")
+    );
   }
 }
 
-
-function afficheScore(nbTentative, tempsPartie, victoire){
-  const points = victoire ? (nbTentative * 10) + tempsPartie : 0;
-  const nbTentativeRestante = victoire ? 7 - nbTentative : "-"
+function afficheScore(nbTentative, tempsPartie, victoire) {
+  const points = victoire ? nbTentative * 10 + tempsPartie : 0;
+  const nbTentativeRestante = victoire ? 7 - nbTentative : "-";
   const temps = victoire ? tempsPartie : "-";
 
-  
-  
-  historiquePartie.push({tentative: nbTentativeRestante, temps: temps, victoire:victoire, point: points});
+  historiquePartie.push({
+    tentative: nbTentativeRestante,
+    temps: temps,
+    victoire: victoire,
+    point: points,
+  });
 
   localStorage.setItem("wordle", JSON.stringify(historiquePartie));
-  
-  if(victoire){
-    const container = document.getElementById('resultatPartieVictoire')
-    container.classList.add('visible')
-  }else{
-    const container = document.getElementById('resultatPartiePerdu')
-    container.classList.add('visible')
+
+  if (victoireDeSuite > historiqueVictoireDeSuite) {
+    historiqueVictoireDeSuite = victoireDeSuite;
+    localStorage.setItem(
+      "wordle_victoire",
+      JSON.stringify(historiqueVictoireDeSuite)
+    );
   }
 
+  const container = document.getElementById("resultatPartie");
+  const txtResult = document.getElementById("txtPartie")
+  container.classList.add("visible");
+  document.getElementById("motMystere").classList.toggle("visible")
+  document.getElementById("motMystere").classList.remove("triche")
+
+  if (victoire) {
+    container.classList.add("gagne")
+    txtResult.textContent = `Vous avez gagné ${points} points`
+  } else {
+    container.classList.add("perdu")
+    txtResult.textContent = "Vous avez perdu";
+  }
 }
