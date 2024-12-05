@@ -20,6 +20,7 @@ main{
 }
 
 .affichage{
+  background-color: ;
   margin: auto;
   width: 500px;
   display: flex;
@@ -77,11 +78,12 @@ main{
     color: var(--focusLettre);
     background-color: var(--couleur-bouton);
     cursor: pointer;
+    padding: 7px;
+    border: none;
 }
 
 .CommentJouer{
   color:var(--focusLettre) ;
-  border: 1px solid white;
   height: 30px;
   width: 30px;
   text-align: center;
@@ -89,7 +91,7 @@ main{
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 200px;
   margin: 0px;
   background-color: var(--couleur-bouton);
@@ -101,17 +103,20 @@ main{
   color: var(--focusLettre);
   height: 400px;
   display: none;
-  background: rgba(255, 255, 255, 0.144); 
+  background: rgba(17, 17, 17, 0.804); 
   position: absolute; 
   width: 500px;
-  top: 50%; /* Centre verticalement */
-  left: 50%; /* Centre horizontalement */
+  top: 50%; 
+  left: 50%; 
   transform: translate(-50%, -50%);
-
-  }
-
-  .texteExplicatif{
-    margin-top: 150px;
+    h2{
+      padding-left: 20px;
+      padding: 20px;
+    }
+    p{
+      padding-left: 20px;
+      padding-right: 10px;
+    }
 
   }
 
