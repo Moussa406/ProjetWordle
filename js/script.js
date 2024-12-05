@@ -16,7 +16,6 @@
 const closeButton = document.getElementById('closeButtonVictoire');
 
 closeButton.addEventListener('click', function(){
-  console.log("je click")
   const container = document.getElementById('resultatPartieVictoire')
   container.classList.toggle('visible')
 });
