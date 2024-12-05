@@ -2,13 +2,14 @@ let ligne = 0;
 let colone = 0;
 let motMystere = "SALUT";
 let motSaisie = "";
-let point = 7;
+let pointTentative = 7;
 let pointTemps = 0;
+let pointPartie = 0;
 let enJeu = false;
 
 const timerElement = document.getElementById("timer");
-const essaisRestant = document.getElementById("essaisRestant")
-const boutonRejouer = document.getElementById("btRejouer")
+const essaisRestant = document.getElementById("essaisRestant");
+const boutonRejouer = document.getElementById("btRejouer");
 
 const departMinutes = 2.5;
 let chrono;
@@ -59,43 +60,63 @@ function initialisationJeu() {
   });
 
   // Listener bouton rejouer
-  boutonRejouer.addEventListener("click", function(){
-    boutonRejouer.classList.toggle("visible")
-    initialisationPartie()
+  boutonRejouer.addEventListener("click", function () {
+    boutonRejouer.classList.toggle("visible");
+    initialisationPartie();
   });
 
   initialisationPartie();
 }
 
+// Initialisation d'une nouvelle partie
 function initialisationPartie() {
-  ligne = 0;
-  point = 7;
-  const indexAleatoire = Math.floor(Math.random() * words.length);
-  motMystere = words[indexAleatoire];
-  console.log(motMystere)
-  temps = departMinutes * 60;
-  enJeu = true;
+  // Initialisation du chrono, des point
+  temps = departMinutes * 60 - 1; // (-1 pour décaller de 1s le chrono)
+  pointTentative = 7;
+  pointPartie = 0;
 
+  // Vide la grille
   const casesGrille = document.querySelectorAll(".case");
   for (const maCase of casesGrille) {
     maCase.className = "case";
     maCase.textContent = "";
   }
+
+  // Initialisation position dans la grille
+  ligne = 0;
+  colone = 0;
+
+  // Vide le clavier
   const touchesClavier = document.querySelectorAll(".toucheLettre");
   for (const touche of touchesClavier) {
     touche.className = "toucheLettre";
   }
 
+  //  Sort un mot aléatoire
+  const indexAleatoire = Math.floor(Math.random() * words.length);
+  motMystere = words[indexAleatoire];
+  console.log(motMystere);
+
   initialisationTentative();
-  startTimer()
+  startTimer();
+  enJeu = true;
 }
 
+// Initialisation d'une nouvelle tentative (à chaque ligne de la grille)
 function initialisationTentative() {
+  // Se positione sur la première colone
   colone = 0;
+  // Vide la variable qui stocke le dernier mot testé
   motSaisie = "";
-  point--;
-  essaisRestant.textContent = point
+
+  // Mise à jour du nombre de tentative restante
+  pointTentative--;
+  essaisRestant.textContent = pointTentative;
+
+  // Met le focus sur la première case active
   setCouleurFocus();
+
+  // Si arrivé à la dernière ligne on est en fin de partie
   if (ligne > 5) {
     console.log("perdu");
     enJeu = false;
@@ -103,54 +124,77 @@ function initialisationTentative() {
   }
 }
 
+// Démarre de chrono
 function startTimer() {
   chrono = setInterval(() => {
-    if(temps === 0 ){
-      enJeu = false
+    // Quand le temps est arrivé à 0 on stop le chrono et fin de partie
+    if (temps === 0) {
+      enJeu = false;
       stopTimer();
     }
+
+    // Convertie le temps (s) en (m:s)
     let minutes = parseInt(temps / 60, 10);
     let secondes = parseInt(temps % 60, 10);
 
+    // Ajoute un 0 si nombre inférieure à 10
     minutes = minutes < 10 ? "0" + minutes : minutes;
     secondes = secondes < 10 ? "0" + secondes : secondes;
 
+    // Mise à jour de l'affichage du chrono
     timerElement.innerText = `${minutes}:${secondes}`;
+
+    // Pour le calcul du bonnus
     pointTemps = temps;
+
+    // Décrémente le temps est supérieur à 1 s
     temps = temps <= 1 ? 0 : temps - 1;
-    // console.log(temps)
+    // iconsole.log(temps)
   }, 1000);
 }
 
-function stopTimer(){
+// Stop le chrono
+function stopTimer() {
+  // Stop l'interval
   clearInterval(chrono);
-  boutonRejouer.classList.toggle("visible")
+  // Rend visible le bouton pour relancer une partie
+  boutonRejouer.classList.toggle("visible");
 }
 
+// Lance les testes sur le mot saisie
 function testeLaReponse() {
-  if (motExiste(motSaisie) && colone === 5 && enJeu === true) {
-    checkCorespondance(motSaisie);
-    if (motMystere === motSaisie) {
-      console.log("gagné");
-      console.log(point);
-      enJeu = false;
-      stopTimer()
-    } else {
-      ligne++;
-      initialisationTentative();
+  // Si la saisie est complete (5 lettres) et que le jeu est en cours
+  if (colone === 5 && enJeu === true) {
+    // Si le mot existe
+    if (motExiste(motSaisie)) {
+      // Lance la vérification corspondance des lettre (mise en couleur comme indice)
+      checkCorespondance(motSaisie);
+      // Si le mot est le bon on calcul les point, les affiches et fin de partie
+      if (motMystere === motSaisie) {
+        console.log("gagné");
+        console.log(pointTentative);
+        console.log(temps);
+        enJeu = false;
+        stopTimer();
+      } else {
+        // On passe à la tentative suivante
+        ligne++;
+        initialisationTentative();
+      }
     }
   }
 }
 
+// Vérification si le mot existe dans la liste
 function motExiste(mot) {
-  if( words.includes(mot)){
-    return true
-  }else{
-    const ligneGrille = document.getElementById(`ligne${ligne}`)
-    ligneGrille.classList.toggle('saisieIncorect')
-    return false
+  // Si le mot n'exite pas on ajoute du style sur la ligne
+  if (words.includes(mot)) {
+    return true;
+  } else {
+    const ligneGrille = document.getElementById(`ligne${ligne}`);
+    ligneGrille.classList.toggle("saisieIncorect");
+    return false;
   }
-  
 }
 
 function ajouteLaLettreSaisie(char) {
@@ -171,8 +215,8 @@ function ajouteLaLettreSaisie(char) {
 
 function effaceDerniereLettre() {
   if (enJeu === true && colone > 0) {
-    const ligneGrille = document.getElementById(`ligne${ligne}`)
-    ligneGrille.classList.remove('saisieIncorect')
+    const ligneGrille = document.getElementById(`ligne${ligne}`);
+    ligneGrille.classList.remove("saisieIncorect");
     setCouleurFocus();
     colone--;
     setCouleurFocus();

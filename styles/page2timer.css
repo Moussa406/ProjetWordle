@@ -48,7 +48,7 @@ main{
     visibility: hidden;
     width: fit-content;
     margin: 0 auto;
-    transition: 0.5s;
+    transition: .5s;
   }
 
   .boutton.visible{
