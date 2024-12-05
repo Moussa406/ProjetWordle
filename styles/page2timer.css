@@ -130,3 +130,62 @@ display: flex;
   width: 35px;
   height: 35px;
 }
+
+.bouttonRetour{
+  width: fit-content;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border-radius: 50px;
+  color: var(--focusLettre);
+  background-color: var(--couleur-bouton);
+  cursor: pointer;
+  padding: 7px;
+  border: none;
+}
+
+.CommentJouer{
+color:var(--focusLettre) ;
+height: 30px;
+width: 30px;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 15px;
+right: 200px;
+margin: 0px;
+background-color: var(--couleur-bouton);
+cursor: pointer;
+}
+
+.regleDuJeu{
+border: 1px solid white;
+color: var(--focusLettre);
+height: 400px;
+display: none;
+background: rgba(17, 17, 17, 0.804); 
+position: absolute; 
+width: 500px;
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%);
+z-index: 99;
+  h2{
+    padding-left: 20px;
+    padding: 20px;
+  }
+  p{
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+}
+
+.cross {
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  cursor: pointer;
+}
