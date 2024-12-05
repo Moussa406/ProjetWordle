@@ -18,3 +18,7 @@ let button = document.getElementById('newGameButton');
 button.addEventListener('click', function () {
     window.location.href = 'jeu.html'; 
 });
+
+document.getElementById('twoPlayersButton').addEventListener('click', function () {
+    window.location.href = 'twoPlayers.html';
+});

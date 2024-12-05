@@ -13,7 +13,6 @@
     --focusLettre: #FFFFFF;
 }
 
-
 body {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
@@ -41,4 +40,3 @@ margin-left: 8px;
 border: none;
 text-transform: uppercase;
 }
-
