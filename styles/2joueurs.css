@@ -19,23 +19,21 @@ p {
     color : white
 }
 
-.button {
-    margin: auto;
-}
-
 /* Lien dans le bouton */
-.boutton a {
-    text-decoration: none; /* Supprime le soulignement */
-    color: inherit; /* Hérite de la couleur définie pour le bouton */
-    display: inline-block; /* Empêche le lien de remplir tout l'espace du bouton */
-    width: 100%; /* Facultatif, pour un alignement optimal */
-    text-align: center; /* Centre le texte si nécessaire */
-}
-
-/* Alignement et espace du bouton */
 .boutton {
-    display: inline-block; /* Assure que le bouton est limité à son contenu */
-    text-align: center; /* Centre le texte du bouton */
+    width: fit-content;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border-radius: 50px;
+    color: var(--focusLettre);
+    background-color: var(--couleur-bouton);
+    cursor: pointer;
+    padding: 7px;
+    border: none;
+    width: auto;
+    height: auto;
+    font-size: 15px;
 }
 
 h3 {
@@ -68,10 +66,8 @@ h3 {
     visibility: hidden;
     transition: 2s;
     position: relative;
-    
     display: none;
-    
-    
+       
   
     p {
       font-size: 25px;

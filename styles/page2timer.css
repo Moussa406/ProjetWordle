@@ -154,6 +154,9 @@ display: flex;
   cursor: pointer;
   padding: 7px;
   border: none;
+  width: auto;
+  height: auto;
+  font-size: 15px;
 }
 
 .CommentJouer{
