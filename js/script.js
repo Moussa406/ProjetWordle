@@ -13,4 +13,12 @@
 //   timerElement.innerText = `${minutes}:${secondes}`
 //   temps = temps <= 0 ? 0 : temps - 1
 // }, 1000)
+const closeButton = document.getElementById('closeButtonVictoire');
+
+closeButton.addEventListener('click', function(){
+  console.log("je click")
+  const container = document.getElementById('resultatPartieVictoire')
+  container.classList.toggle('visible')
+});
+
 

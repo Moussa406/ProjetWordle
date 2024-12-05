@@ -32,6 +32,7 @@ main{
   color: white;
   text-align: center;
   font-size: 24px;
+  
 
   p {
     margin-top: 0;
@@ -44,11 +45,12 @@ main{
   }
 
   .boutton {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0.5;
+    /* visibility: hidden; */
     width: fit-content;
     margin: 0 auto;
     transition: .5s;
+    margin-top: 30px;
   }
 
   .boutton.visible{
@@ -66,4 +68,64 @@ main{
   font-size: 4em;
   text-align: center;
   margin-bottom: 1.5rem;
+}
+
+.afficheResultat {
+  text-shadow: #000123;
+  color: var(--focusLettre);
+  border : 2px solid var(--couleur-bouton);
+  width: 200px;
+  height: 2.5px;
+  padding: 50px;
+  align-items: center;
+  display: flex;
+  font-size: 28px;
+  margin-right: auto;
+  margin-left: auto;
+  /* right: 15px;    */
+  /* top: calc(50% - 150px); */
+  background: rgba(255, 255, 255, 0.144);    
+ /* box-shadow: 10px 10px 2px rgba(255, 255, 255, 0.3);*/
+  border-radius: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 2s;
+  position: relative;
+  
+  display: none;
+  
+  
+
+  p {
+    font-size: 25px;
+    margin: 0;
+
+  }
+}
+
+.gagne{
+  background-color: rgb(0, 128, 107);
+}
+
+.perdu{
+  background-color: rgb(225, 0, 255);
+}
+
+.afficheResultat.visible{
+opacity: 1;
+visibility: visible;
+display: flex;
+}
+
+
+.cross {
+  position: absolute; /* Positionnement par rapport au parent (.reglejeu) */
+  top: 10px; 
+  right: 10px;
+  cursor: pointer;
+}
+
+.cross img {
+  width: 35px;
+  height: 35px;
 }
