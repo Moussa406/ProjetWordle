@@ -2,10 +2,15 @@
 
 
 let button = document.getElementById('retourBouton');
+let buttonStatistique = document.getElementById('buttonRetourStat')
 
 button.addEventListener('click', function () {
     window.location.href = 'index.html'; 
 });
+buttonStatistique.addEventListener('click', function () {
+    window.location.href = 'stat.html'; 
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const howToPlay = document.getElementById('howToPlay');
@@ -20,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
         howToPlay.style.display = 'none';
     });
 });
+
