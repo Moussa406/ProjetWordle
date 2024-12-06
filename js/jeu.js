@@ -33,7 +33,6 @@ function initialisationJeu() {
   creationGrille();
   estMulti();
 
-  // Listener du clavier
   // zoneJeuContainer
   const grille = document.querySelector(".zoneJeuContainer");
   // const grille = document.getElementById("grille");
@@ -89,7 +88,6 @@ function initialisationJeu() {
         avecTemps = true;
         departMinutes = 5;
       }
-      console.log(avecTemps);
       timerElement.classList.toggle("cache");
     }
   });
@@ -356,6 +354,8 @@ function recupereHistorique() {
 
 function afficheScore(nbTentative, tempsPartie, victoire) {
   let points = 0;
+
+  // si avec chrono ajoute bonus point
   if (avecTemps) {
     points = victoire ? nbTentative * 10 + tempsPartie : 0;
   } else {
@@ -370,6 +370,7 @@ function afficheScore(nbTentative, tempsPartie, victoire) {
     document.getElementById("pointJ1").textContent = pointJ1;
     document.getElementById("pointJ2").textContent = pointJ2;
   } else {
+    // ajoute la partie à l'historique
     historiquePartie.push({
       tentative: nbTentativeRestante,
       temps: temps,
@@ -379,6 +380,7 @@ function afficheScore(nbTentative, tempsPartie, victoire) {
 
     localStorage.setItem("wordle", JSON.stringify(historiquePartie));
 
+    // ajoute à l'historique nombre de victoire à la suite si on le dépasse
     if (victoireDeSuite > historiqueVictoireDeSuite) {
       historiqueVictoireDeSuite = victoireDeSuite;
       localStorage.setItem(
@@ -388,6 +390,7 @@ function afficheScore(nbTentative, tempsPartie, victoire) {
     }
   }
 
+  // Affiche le résultat de la partie
   const container = document.getElementById("resultatPartie");
   const txtResult = document.getElementById("txtPartie");
   container.classList.add("visible");
