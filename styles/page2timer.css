@@ -74,7 +74,7 @@ main{
   }
 
   .affichageMotMystere {
-    color: greenyellow;
+    color: var(--lettreOK);
     margin-top:100px;
   }
 
@@ -126,11 +126,11 @@ main{
 }
 
 .gagne{
-  background-color: rgb(0, 128, 107);
+   background-color: var(--lettreOK)
 }
 
 .perdu{
-  background-color: rgb(225, 0, 255);
+  background-color: var(--couleur-joueur2);
 }
 
 .afficheResultat.visible{

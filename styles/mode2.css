@@ -17,7 +17,7 @@
     }
 
     .joue{
-        background-color: green;
+        background-color: var(--lettreOK);
         opacity: 1;
     }
 
