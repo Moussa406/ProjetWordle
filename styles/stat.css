@@ -66,3 +66,25 @@ h1 span {
 .stat div {
     display : flex;
 }
+
+.boutton {
+    width: fit-content;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border-radius: 50px;
+    color: var(--focusLettre);
+    background-color: var(--couleur-bouton);
+    cursor: pointer;
+    padding: 7px;
+    border: none;
+    width: auto;
+    height: auto;
+    font-size: 15px;
+    text-transform: none;
+}
+
+a {
+    color : white;
+    text-decoration: none;
+}
