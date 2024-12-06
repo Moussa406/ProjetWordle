@@ -34,7 +34,7 @@
     }
 
     .saisieIncorect .case{
-        color: red;
+        color: #d90429;
     }
 }
 

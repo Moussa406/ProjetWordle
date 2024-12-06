@@ -7,9 +7,9 @@
     --couleur-bouton: #8C52FF;
     --couleur-background: #000123;
     --couleur-joueur2: #cb6ce6;
-    --lettreOK: #219847;
-    --lettreKO: #2c2629;
-    --lettreMalPlacer: orange;
+    --lettreOK: #5aaa95;
+    --lettreKO: #adb5bd;
+    --lettreMalPlacer: #ffd95c;
     --focusLettre: #FFFFFF;
 }
 

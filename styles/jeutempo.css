@@ -1,0 +1,23 @@
+.couleurLettreVert {
+    color: #5aaa95;
+    font-weight: bold;
+}
+
+.couleurLettreJaune {
+    color: #ffd95c;
+    font-weight: bold;
+}
+
+.couleurLettreGris {
+    color: #adb5bd;
+    font-weight: bold;
+}
+
+h2 {
+    color: violet;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
