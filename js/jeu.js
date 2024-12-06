@@ -85,6 +85,7 @@ function initialisationJeu() {
         avecTemps = false;
         departMinutes = 90;
       } else {
+        timerElement.innerText = `05:00`;
         avecTemps = true;
         departMinutes = 5;
       }
