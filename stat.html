@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="Projet Wordle">
+<html lang=fr>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Statistiques</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styles/stat.css" />
   </head>
   <body>
     <main>
-      <h1>Résultat et statistique</h1>
+      <h1><span>R</span>ésultats et <span>S</span>tatistiques :</h1>
       <div class="contain">
         <div class="historique div">
           <table id="table">
             <tr>
-              <th>Résultat</th>
-              <th>Nb tentative</th>
+              <th>Résultats</th>
+              <th>Nb tentatives</th>
               <th>Temps</th>
               <th>Score</th>
             </tr>
@@ -24,19 +24,23 @@
         <div class="stat div">
           <div>
             <span class="texteStat" id="nbPartie"></span>
-            <span>played</span>
+            <span>Parties</span>
           </div>
           <div>
             <span class="texteStat" id="taux"></span>
-            <span>win</span>
+            <span>Victoires 🏆</span>
           </div>
           <div>
             <span class="texteStat" id="bestTime"></span>
-            <span>best time</span>
+            <span>Meilleur temps 🏃</span>
           </div>
           <div>
             <span class="texteStat" id="bestScore"></span>
-            <span>best score</span>
+            <span>Meilleur score 💪</span>
+          </div>
+          <div>
+            <span class="texteStat" id="bestSuite"></span>
+            <span>Victoires consécutives</span>
           </div>
         </div>
       </div>

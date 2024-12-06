@@ -51,6 +51,7 @@ function afficheLesDatas() {
   document.getElementById("taux").textContent = `${pourcentageVictoire}%`;
   document.getElementById("bestTime").textContent = `${meilleurTemps}s`;
   document.getElementById("bestScore").textContent = `${meilleurScore}`;
+  document.getElementById("bestSuite").textContent = historiqueVictoireDeSuite;
 }
 
 function ajouteLigneTable(resultat, tentative, temps, point) {
@@ -58,7 +59,7 @@ function ajouteLigneTable(resultat, tentative, temps, point) {
   const nouvelleLigne = document.createElement("tr");
   nouvelleLigne.innerHTML = `
         <td ${resultat ? "class=victoire" : "class=perdu"}>${
-    resultat ? "Gagné" : "perdu"
+    resultat ? "Gagné" : "Perdu"
   }</td>
         <td ${resultat ? "class=victoire" : "class=perdu"}>${tentative}</td>
         <td ${resultat ? "class=victoire" : "class=perdu"}>${temps}s</td>

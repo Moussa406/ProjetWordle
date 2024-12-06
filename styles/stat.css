@@ -18,14 +18,15 @@ h1 {
 }
 
 table {
-    border-width: 1px;
+    border-width: 4px;
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.213);
+    border-color: var(--couleur-bouton);
     border-radius: 5px;
 }
 
 th {
-    width: 90px;
+    padding: 5px;
+    width: 120px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.28);
 }
 
@@ -40,15 +41,28 @@ tr:last-child td {
 .victoire{
     color:var(--lettreOK)
 }
+
 .perdu{
     color: red;
 }
 
-span{
+span {
+    margin-bottom: 5px;
     font-size: 30px;
 }
 
 .texteStat{
     color: var(--couleur-bouton);
-    margin-right: 5px;
+    margin-right: 20px;
+    width: 50px;
+    text-align: right;
+}
+
+h1 span {
+    font-size: 50px;
+    color: var(--couleur-bouton);
+}
+
+.stat div {
+    display : flex;
 }

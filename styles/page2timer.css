@@ -164,6 +164,7 @@ visibility: visible;
 }
 
 .CommentJouer{
+border-radius: 20px;
 color:var(--focusLettre) ;
 height: 30px;
 width: 30px;
