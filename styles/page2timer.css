@@ -20,7 +20,7 @@ main{
 }
 
 .affichage{
-  background-color: ;
+  /* background-color: ; */
   margin: auto;
   width: 500px;
   display: flex;
@@ -62,7 +62,7 @@ main{
     margin-top: 30px;
     font-size: 24px;
     opacity: 0;
-    transition: 0.5s ease-out@;
+    transition: 0.5s ease-out;
   }
 
   .motMystere.visible {

@@ -1,0 +1,33 @@
+.joueur{
+    display: flex;
+
+    .idJoueur {
+        display: flex;
+        flex-direction: column;
+        color : white;
+        text-align: center;
+        border: 5px var(--couleur-joueur2) double;
+        border-radius: 20px;
+        margin : auto;
+        height: 50px;
+        width: 90px;
+        opacity: 0.5;
+
+        
+    }
+
+    .joue{
+        background-color: green;
+        opacity: 1;
+    }
+
+    span{
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+
+    
+    
+}
+

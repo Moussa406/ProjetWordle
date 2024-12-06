@@ -20,5 +20,5 @@ button.addEventListener('click', function () {
 });
 
 document.getElementById('twoPlayersButton').addEventListener('click', function () {
-    window.location.href = '2joueurs.html';
+    window.location.href = 'jeuA2.html';
 });
